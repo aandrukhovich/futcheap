@@ -9,8 +9,12 @@ class Player:
         self.league = content['league']
         self.rating = content['rating']
         self.position = content['position']
-        self.rating = content['rating']
+        self.price = content['price']
         self.card_types = content['card_types']
+
+
+    def __str__(self):
+        return f"name={self.name} rating={self.rating} price={self.price}"
 
 
 
