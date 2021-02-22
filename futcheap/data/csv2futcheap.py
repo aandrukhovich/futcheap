@@ -19,10 +19,6 @@ def load_csv(csv_filepath: str):
             leagues.add(row['league'])
             for card_type in row['card_types'].split(' '):
                 card_types.add(card_type)
-    print(len(clubs))
-    print(len(nations))
-    print(len(leagues))
-    print(sorted(list(card_types)))
     return players, clubs, nations, leagues, card_types
 
 
