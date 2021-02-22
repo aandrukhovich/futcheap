@@ -1,4 +1,5 @@
 from typing import Dict
+from futcheap.utils import utils
 
 
 class Player:
@@ -9,7 +10,7 @@ class Player:
         self.league = content['league']
         self.rating = content['rating']
         self.position = content['position']
-        self.price = content['price']
+        self.price = utils.convert_price_to_int(content['price'])
         self.card_types = content['card_types']
 
 
