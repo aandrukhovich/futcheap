@@ -40,6 +40,9 @@ class Squad:
     def get_rating(self):
         return utils.get_rating(self.players)
 
+    def get_price(self):
+        return sum(p.price for p in self.players)
+
     def get_chemistry(self, detailed=False):
         """
         https://www.reddit.com/r/FIFA/comments/k05te9/need_the_exact_formula_for_individual_player/
@@ -64,7 +67,7 @@ class Squad:
 
             final = min(10, position_points + (position_multiplier * link_points) + overlinked_bonus)
             individual_chemistries.append(final)
-            print(player.name, final)
+            # print(player.name, final)
         team_chemistry = min(100, sum(individual_chemistries))
         if detailed:
             return team_chemistry, individual_chemistries
