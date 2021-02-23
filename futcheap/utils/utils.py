@@ -47,4 +47,4 @@ def get_rating(players: List[Player]) -> int:
         for player in players
         if player.rating > overall_rating
     )
-    return math.floor((summary_rating + correction_factor) / len(players))
+    return math.floor(round(summary_rating + correction_factor) / len(players))
