@@ -65,4 +65,4 @@ class Squad:
             final = min(10, position_points + (position_multiplier * link_points) + overlinked_bonus)
             individual_chemistries.append(final)
             print(player.name, final)
-        return sum(individual_chemistries)
+        return min(100, sum(individual_chemistries))
