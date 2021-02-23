@@ -30,26 +30,6 @@ position2num = {POSITIONS_LIST[i]: i for i in range(len(POSITIONS_LIST))}
 num2position = {v: k for k, v in position2num.items()}
 
 
-Pos2MaxChemTable = [
-    [10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 10, 5, 5, 9, 2, 2, 2, 2, 5, 2, 2, 2, 2, 2, 2, 2],
-    [2, 5, 10, 5, 2, 2, 5, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 5, 5, 10, 2, 9, 2, 2, 2, 2, 5, 2, 2, 2, 2, 2, 2],
-    [2, 9, 2, 2, 10, 5, 2, 2, 2, 5, 2, 5, 2, 2, 2, 2, 2],
-    [2, 2, 2, 9, 5, 10, 2, 2, 2, 2, 5, 2, 5, 2, 2, 2, 2],
-    [2, 2, 5, 2, 2, 2, 10, 9, 5, 2, 2, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 9, 10, 9, 5, 5, 2, 2, 2, 2, 2, 2],
-    [2, 2, 2, 2, 2, 2, 5, 9, 10, 2, 2, 2, 2, 9, 2, 2, 2],
-    [2, 5, 2, 2, 5, 2, 2, 5, 2, 10, 5, 9, 2, 2, 5, 2, 2],
-    [2, 2, 2, 5, 2, 5, 2, 5, 2, 5, 10, 2, 9, 2, 2, 5, 2],
-    [2, 2, 2, 2, 5, 2, 2, 2, 2, 9, 2, 10, 5, 2, 9, 2, 2],
-    [2, 2, 2, 2, 2, 5, 2, 2, 2, 2, 9, 5, 10, 2, 2, 9, 2],
-    [2, 2, 2, 2, 2, 2, 2, 2, 9, 2, 2, 2, 2, 10, 5, 5, 9],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 2, 9, 2, 5, 10, 5, 5],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 2, 9, 5, 5, 10, 5],
-    [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 9, 5, 5, 10]
-]
-
 
 def get_chemistry(schema: Schema, players: List[Player]) -> int:
     return 15
@@ -58,6 +38,8 @@ def get_chemistry(schema: Schema, players: List[Player]) -> int:
 def get_rating(players: List[Player]) -> int:
     """ sources: https://fifauteam.com/fifa-19-squad-rating-guide/
     https://www.reddit.com/r/FIFA/comments/5osq7k/new_overall_rating_figured_out/"""
+
+    # test it https://www.futbin.com/sbc-rating-combinations
     summary_rating = sum(player.rating for player in players)
     overall_rating = summary_rating / len(players)
     correction_factor = sum(
