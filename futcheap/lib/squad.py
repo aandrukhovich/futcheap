@@ -40,7 +40,7 @@ class Squad:
     def get_rating(self):
         return utils.get_rating(self.players)
 
-    def get_chemistry(self):
+    def get_chemistry(self, detailed=False):
         """
         https://www.reddit.com/r/FIFA/comments/k05te9/need_the_exact_formula_for_individual_player/
         https://www.gfinityesports.com/article/6727/fifa-21-ultimate-team-chemistry-guide-team-player-loyalty-chemistry-explained
@@ -65,4 +65,9 @@ class Squad:
             final = min(10, position_points + (position_multiplier * link_points) + overlinked_bonus)
             individual_chemistries.append(final)
             print(player.name, final)
-        return min(100, sum(individual_chemistries))
+        team_chemistry = min(100, sum(individual_chemistries))
+        if detailed:
+            return team_chemistry, individual_chemistries
+        else:
+            return team_chemistry
+
