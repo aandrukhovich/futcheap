@@ -91,5 +91,5 @@ def create_4_4_2():
 
 TITLE2SCHEMA = {
     "4_4_2": create_4_4_2(),
-    "4_4_2_2": create_4_4_2_2()
+    "4_4_2(2)": create_4_4_2_2()
 }
